@@ -5,6 +5,8 @@ void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
   int note = 1;
+    final player = AudioPlayer();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +17,6 @@ class XylophoneApp extends StatelessWidget {
               Container(
                 child: TextButton(
                   onPressed: () async {
-                    final player = AudioPlayer();
                     await player.setSource(
                       AssetSource('note1.wav'),
                     );
@@ -35,7 +36,6 @@ class XylophoneApp extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () async {
-                  final player = AudioPlayer();
                   await player.setSource(
                     AssetSource('note1.wav'),
                   );
@@ -54,7 +54,6 @@ class XylophoneApp extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () async {
-                  final player = AudioPlayer();
                   await player.setSource(
                     AssetSource('note1.wav'),
                   );
@@ -73,7 +72,6 @@ class XylophoneApp extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () async {
-                  final player = AudioPlayer();
                   await player.setSource(
                     AssetSource('note1.wav'),
                   );
@@ -92,7 +90,6 @@ class XylophoneApp extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () async {
-                  final player = AudioPlayer();
                   await player.setSource(
                     AssetSource('note1.wav'),
                   );
@@ -111,7 +108,6 @@ class XylophoneApp extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () async {
-                  final player = AudioPlayer();
                   await player.setSource(
                     AssetSource('note1.wav'),
                   );
@@ -130,7 +126,6 @@ class XylophoneApp extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () async {
-                  final player = AudioPlayer();
                   await player.setSource(
                     AssetSource('note1.wav'),
                   );

@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/charlesarchibong/fvm/versions/3.3.3"
-export "FLUTTER_APPLICATION_PATH=/Users/charlesarchibong/Documents/dev.nosync/FlutterProjects/xylophone-flutter"
+export "FLUTTER_ROOT=/Users/Development/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/kosichukwukwe/FlutterProjects/xylophone-app"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
