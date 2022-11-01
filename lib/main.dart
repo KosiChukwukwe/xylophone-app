@@ -9,7 +9,6 @@ void main() {
 }
 
 class XylophoneApp extends StatelessWidget {
-  int note = 1;
 
   void playingSound(int i) {
     final player = AudioPlayer();
@@ -38,26 +37,20 @@ class XylophoneApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Center(
-              child: Text(
-            "XYLOPHONE APP",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          )),
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            createButton(1, Colors.red),
-            createButton(2, Colors.blue),
-            createButton(3, Colors.deepPurple),
-            createButton(4, Colors.amber),
-            createButton(5, Colors.greenAccent),
-            createButton(6, Colors.orangeAccent),
-            createButton(7, Colors.yellow),
-          ],
+        backgroundColor: Colors.black,
+        body: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              createButton(1, Colors.red),
+              createButton(2, Colors.orange),
+              createButton(3, Colors.yellow),
+              createButton(4, Colors.green),
+              createButton(5, Colors.teal),
+              createButton(6, Colors.blue),
+              createButton(7, Colors.purple),
+            ],
+          ),
         ),
       ),
     );
