@@ -1,11 +1,39 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(XylophoneApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(XylophoneApp());
+}
 
 class XylophoneApp extends StatelessWidget {
   int note = 1;
+  void playingSound(int i){
     final player = AudioPlayer();
+    player.play(
+        AssetSource('note$i.wav'));
+  }
+
+
+  Widget createButton (int q, Color color){
+    return Expanded(
+      child: TextButton(
+        onPressed: () {
+          playingSound(q);
+        },
+        child: Container(
+          color: color,
+        ),
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all(
+            EdgeInsets.all(0),
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,135 +41,15 @@ class XylophoneApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Container(
-                child: TextButton(
-                  onPressed: () async {
-                    await player.setSource(
-                      AssetSource('note1.wav'),
-                    );
-                    await player.resume();
-                  },
-                  child: Container(
-                    color: Colors.red,
-                    width: double.infinity,
-                    height: 70,
-                  ),
-                  style: ButtonStyle(
-                    padding: MaterialStateProperty.all(
-                      EdgeInsets.all(0),
-                    ),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () async {
-                  await player.setSource(
-                    AssetSource('note1.wav'),
-                  );
-                  await player.resume();
-                },
-                child: Container(
-                  color: Colors.blue,
-                  width: double.infinity,
-                  height: 70,
-                ),
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(
-                    EdgeInsets.all(0),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () async {
-                  await player.setSource(
-                    AssetSource('note1.wav'),
-                  );
-                  await player.resume();
-                },
-                child: Container(
-                  color: Colors.deepPurple,
-                  width: double.infinity,
-                  height: 70,
-                ),
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(
-                    EdgeInsets.all(0),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () async {
-                  await player.setSource(
-                    AssetSource('note1.wav'),
-                  );
-                  await player.resume();
-                },
-                child: Container(
-                  color: Colors.amber,
-                  width: double.infinity,
-                  height: 70,
-                ),
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(
-                    EdgeInsets.all(0),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () async {
-                  await player.setSource(
-                    AssetSource('note1.wav'),
-                  );
-                  await player.resume();
-                },
-                child: Container(
-                  color: Colors.greenAccent,
-                  width: double.infinity,
-                  height: 70,
-                ),
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(
-                    EdgeInsets.all(0),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () async {
-                  await player.setSource(
-                    AssetSource('note1.wav'),
-                  );
-                  await player.resume();
-                },
-                child: Container(
-                  color: Colors.orangeAccent,
-                  width: double.infinity,
-                  height: 70,
-                ),
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(
-                    EdgeInsets.all(0),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () async {
-                  await player.setSource(
-                    AssetSource('note1.wav'),
-                  );
-                  await player.resume();
-                },
-                child: Container(
-                  color: Colors.yellow,
-                  width: double.infinity,
-                  height: 70,
-                ),
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(
-                    EdgeInsets.all(0),
-                  ),
-                ),
-              ),
+              createButton(1,Colors.red),
+              createButton(2,Colors.blue),
+              createButton(3, Colors.deepPurple),
+              createButton(4, Colors.amber),
+              createButton(5, Colors.greenAccent),
+              createButton(6, Colors.orangeAccent),
+              createButton(7, Colors.yellow),
             ],
           ),
         ),
@@ -149,3 +57,4 @@ class XylophoneApp extends StatelessWidget {
     );
   }
 }
+
